@@ -1,76 +1,103 @@
-class Floater //Do NOT modify the Floater class! Make changes in the Spaceship class 
-{   
-  protected int corners;  //the number of corners, a triangular floater has 3   
-  protected int[] xCorners;   
-  protected int[] yCorners;   
-  protected int myColor;   
-  protected double myCenterX, myCenterY; //holds center coordinates   
-  protected double myXspeed, myYspeed; //holds the speed of travel in the x and y directions   
-  protected double myPointDirection; //holds current direction the ship is pointing in degrees    
-
-  //Accelerates the floater in the direction it is pointing (myPointDirection)   
-  public void accelerate (double dAmount)   
-  {          
-    //convert the current direction the floater is pointing to radians    
-    double dRadians =myPointDirection*(Math.PI/180);     
-    //change coordinates of direction of travel    
-    myXspeed += ((dAmount) * Math.cos(dRadians));    
-    myYspeed += ((dAmount) * Math.sin(dRadians));       
-  }   
-  public void turn (double degreesOfRotation)   
-  {     
-    //rotates the floater by a given number of degrees    
-    myPointDirection+=degreesOfRotation;   
-  }   
-  public void move ()   //move the floater in the current direction of travel
-  {      
-    //change the x and y coordinates by myXspeed and myYspeed       
-    myCenterX += myXspeed;    
-    myCenterY += myYspeed;     
-
-    //wrap around screen    
-    if(myCenterX >width)
-    {     
-      myCenterX = 0;    
-    }    
-    else if (myCenterX<0)
-    {     
-      myCenterX = width;    
-    }    
-    if(myCenterY >height)
-    {    
-      myCenterY = 0;    
-    } 
+class Floater{
+  protected double x, y;
+  protected double dx, dy;
+  protected double direction;
+  protected int vertice;
+  protected int [] X_vertice;
+  protected int [] Y_vertice;
+  protected color Color;
+  
+  public Floater(){
     
-    else if (myCenterY < 0)
-    {     
-      myCenterY = height;    
-    }   
-  }   
-  public void show ()  //Draws the floater at the current position  
-  {             
-    fill(myColor);   
-    stroke(myColor);    
+  }
+  
+  public void operations(/*double Acceleration, double ddirection*/){
+    /*
+    dx = dx + Acceleration*Math.cos(direction);
+    dy = dy + Acceleration*Math.sin(direction);
+    direction = direction + ddirection;
+    */
     
-    //translate the (x,y) center of the ship to the correct position
-    translate((float)myCenterX, (float)myCenterY);
-
-    //convert degrees to radians for rotate()     
-    float dRadians = (float)(myPointDirection*(Math.PI/180));
+    x = x + dx;
+    y = y + dy;
     
-    //rotate so that the polygon will be drawn in the correct direction
-    rotate(dRadians);
+    if(x > width)
+      x = 0;
+    if(x < 0)
+      x = width;
+    if(y > height)
+      y = 0;
+    if(y < 0)
+      y = height;
+  }
+  
+  public void show(){
+    fill(Color);
+    stroke(Color);
     
-    //draw the polygon
+    translate((float)x,(float)y);
+    rotate((float)direction);
+    
     beginShape();
-    for (int nI = 0; nI < corners; nI++)
-    {
-      vertex(xCorners[nI], yCorners[nI]);
+    for(int i = 0; i < vertice; i = i + 1){
+      vertex(X_vertice[i], Y_vertice[i]);
     }
     endShape(CLOSE);
-
-    //"unrotate" and "untranslate" in reverse order
-    rotate(-1*dRadians);
-    translate(-1*(float)myCenterX, -1*(float)myCenterY);
-  }   
-} 
+  
+    rotate(-1 * (float)direction);
+    translate(-1 * (float)x, -1 * (float)y);
+  }
+  
+  protected float a;
+  
+  public double getx(){
+    return x;
+  }
+  public void setx(int i){
+    x = x + i;
+  }
+  public double gety(){
+    return y;
+  }
+  public void sety(int i){
+    y = y + i;
+  }
+  public double getdx(){
+    return dx;
+  }
+  public void setdx(float i, boolean b){
+    if(b == true)
+      i = i + 0.1;
+    else
+      i = i - 0.1;
+    dx = dx + i;
+  }
+  public double getdy(){
+    return x;
+  }
+  public void setdy(float i, boolean b){
+    if(b == true)
+      i = i + 0.1;
+    else
+      i = i - 0.1;
+    dy = dy + i;
+  }
+  public double getdirection(){
+    return direction;
+  }
+  public void setdirection(int i){
+    direction = direction + i;
+  }
+  public int getvertice(){
+    return vertice;
+  }
+  public void setvertice(int i){
+    vertice = vertice + i;
+  }
+  public color getColor(){
+    return Color;
+  }
+  public void setColor(float x, float y, float z){
+    Color = color(x, y, z);
+  }
+}
