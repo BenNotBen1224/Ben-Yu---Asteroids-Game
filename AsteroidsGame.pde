@@ -1,5 +1,5 @@
 /*
-1. Swinging steroids (arc)
+1. Swinging asteroids (arc)
 */
 
 Spaceship ship = new Spaceship();
