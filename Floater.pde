@@ -48,45 +48,38 @@ class Floater{
     translate(-1 * (float)x, -1 * (float)y);
   }
   
+  //Adjust Acceleration
   protected float a;
   
   public double getx(){
     return x;
   }
   public void setx(int i){
-    x = x + i;
+    x = i;
   }
   public double gety(){
     return y;
   }
   public void sety(int i){
-    y = y + i;
+    y = i;
   }
   public double getdx(){
     return dx;
   }
-  public void setdx(float i, boolean b){
-    if(b == true)
-      i = i + 0.1;
-    else
-      i = i - 0.1;
+  public void setdx(float i){
     dx = dx + i;
   }
   public double getdy(){
     return x;
   }
-  public void setdy(float i, boolean b){
-    if(b == true)
-      i = i + 0.1;
-    else
-      i = i - 0.1;
+  public void setdy(float i){
     dy = dy + i;
   }
   public double getdirection(){
     return direction;
   }
-  public void setdirection(int i){
-    direction = direction + i;
+  public void setdirection(double i){
+    direction = i;
   }
   public int getvertice(){
     return vertice;
