@@ -36,13 +36,13 @@ void keyPressed(){
     d = true;
    
   if(w == true)
-    ship.setdy(-1, true);
+    ship.setdy(-0.9);
   if(a == true)
-    ship.setdx(-1, true);
+    ship.setdx(-0.9);
   if(s == true)
-    ship.setdy(+1, false);
+    ship.setdy(0.9);
   if(d == true)
-    ship.setdx(+1, false);
+    ship.setdx(0.9);
    
   if(key == ' '){
      ship.setx(400);
@@ -58,7 +58,7 @@ void keyPressed(){
 }
 
 void keyReleased(){
-  if(key == 'w')
+ if(key == 'w')
    w = false;
  if(key == 'a')
    a = false;
