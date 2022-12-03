@@ -2,6 +2,7 @@ class Floater{
   protected double x, y;
   protected double dx, dy;
   protected double direction;
+  protected double ddirection;
   protected int vertice;
   protected int [] X_vertice;
   protected int [] Y_vertice;
@@ -20,15 +21,6 @@ class Floater{
     
     x = x + dx;
     y = y + dy;
-    
-    if(x > width)
-      x = 0;
-    if(x < 0)
-      x = width;
-    if(y > height)
-      y = 0;
-    if(y < 0)
-      y = height;
   }
   
   public void show(){
@@ -48,9 +40,6 @@ class Floater{
     translate(-1 * (float)x, -1 * (float)y);
   }
   
-  //Adjust Acceleration
-  protected float a;
-  
   public double getx(){
     return x;
   }
@@ -66,13 +55,19 @@ class Floater{
   public double getdx(){
     return dx;
   }
-  public void setdx(float i){
+  public void setdx1(float i){
+    dx = i;
+  }
+  public void setdx2(float i){
     dx = dx + i;
   }
   public double getdy(){
     return x;
   }
-  public void setdy(float i){
+  public void setdy1(float i){
+    dy = i;
+  }
+  public void setdy2(float i){
     dy = dy + i;
   }
   public double getdirection(){
