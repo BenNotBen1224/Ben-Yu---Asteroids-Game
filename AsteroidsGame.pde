@@ -1,5 +1,5 @@
 Spaceship ship = new Spaceship();
-Star [] star = new Star [200];
+Star [] star = new Star [100];
 ArrayList <Asteroid> asteroid = new ArrayList <Asteroid> ();
 
 int count = 0;
