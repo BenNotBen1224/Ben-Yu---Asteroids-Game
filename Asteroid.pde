@@ -36,7 +36,7 @@ class Asteroid extends Floater{
   public void operations(){
     super.operations();
     
-    ddirection = Math.random()*PI/12;
+    ddirection = (float)(Math.random()*PI/12);
     
     arcstart = arcstart + (float)ddirection;
     arcend = arcend + (float)ddirection;
@@ -57,13 +57,13 @@ class Asteroid extends Floater{
     arc((float)x, (float)y, r, r, arcstart, arcend, PIE);
   }
  
-  public double getx(){
+  public float getx(){
     return x;
   }
   public void setx(float i){
     x = i;
   }
-  public double gety(){
+  public float gety(){
     return y;
   }
   public void sety(float i){
