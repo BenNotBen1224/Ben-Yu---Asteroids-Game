@@ -1,8 +1,8 @@
 class Floater{
-  protected double x, y;
-  protected double dx, dy;
-  protected double direction;
-  protected double ddirection;
+  protected float x, y;
+  protected float dx, dy;
+  protected float direction;
+  protected float ddirection;
   protected int vertice;
   protected int [] X_vertice;
   protected int [] Y_vertice;
@@ -40,19 +40,19 @@ class Floater{
     translate(-1 * (float)x, -1 * (float)y);
   }
   
-  public double getx(){
+  public float getx(){
     return x;
   }
   public void setx(int i){
     x = i;
   }
-  public double gety(){
+  public float gety(){
     return y;
   }
   public void sety(int i){
     y = i;
   }
-  public double getdx(){
+  public float getdx(){
     return dx;
   }
   public void setdx1(float i){
@@ -61,7 +61,7 @@ class Floater{
   public void setdx2(float i){
     dx = dx + i;
   }
-  public double getdy(){
+  public float getdy(){
     return x;
   }
   public void setdy1(float i){
@@ -70,10 +70,10 @@ class Floater{
   public void setdy2(float i){
     dy = dy + i;
   }
-  public double getdirection(){
+  public float getdirection(){
     return direction;
   }
-  public void setdirection(double i){
+  public void setdirection(float i){
     direction = i;
   }
   public int getvertice(){
@@ -88,4 +88,4 @@ class Floater{
   public void setColor(float x, float y, float z){
     Color = color(x, y, z);
   }
-}
+} 
