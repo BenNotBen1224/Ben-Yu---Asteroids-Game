@@ -21,10 +21,10 @@ class Spaceship extends Floater{
   
   public void mouseMoved(){
     if(mouseX < x){
-      direction = Math.atan((mouseY - y)/(mouseX - x)) + PI/2;
+      direction = (float)(Math.atan((mouseY - y)/(mouseX - x)) + PI/2);
     }
     else{
-      direction = Math.atan((mouseY - y)/(mouseX - x)) - PI/2;
+      direction = (float)(Math.atan((mouseY - y)/(mouseX - x)) - PI/2);
     }
   }
 }
