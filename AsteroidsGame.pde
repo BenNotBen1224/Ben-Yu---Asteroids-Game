@@ -81,7 +81,7 @@ void keyPressed(){
    if(key == 'h'){
      ship.setx((int)(Math.random()*801));
      ship.sety((int)(Math.random()*801));
-     ship.setdirection(Math.random()*2*PI);
+     ship.setdirection((float)(Math.random()*2*PI));
      ship.setdx1(0);
      ship.setdy1(0);
     }
