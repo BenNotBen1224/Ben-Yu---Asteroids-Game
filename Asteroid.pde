@@ -54,7 +54,7 @@ class Asteroid extends Floater{
   
   public void show(){
     fill(Color);
-    arc((float)x, (float)y, r, r, arcstart, arcend, PIE);
+    arc((float)x, (float)y, r, r, arcstart, arcend);
   }
  
   public float getx(){
