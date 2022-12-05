@@ -1,5 +1,5 @@
 Spaceship ship = new Spaceship();
-Star [] star = new Star [1];
+Star [] star = new Star [200];
 ArrayList <Asteroid> asteroid = new ArrayList <Asteroid> ();
 
 int count = 0;
@@ -11,7 +11,7 @@ void setup(){
   for(int i = 0; i < star.length; i = i + 1){
     star[i] = new Star();
   }
-  for(int i = 0; i < 1; i = i + 1){
+  for(int i = 0; i < 12; i = i + 1){
     asteroid.add(new Asteroid());
   }
 }
