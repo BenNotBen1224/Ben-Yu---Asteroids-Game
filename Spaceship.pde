@@ -1,4 +1,6 @@
 class Spaceship extends Floater{
+  protected float circulardistance;
+  
   public Spaceship(){
     x = 400;
     y = 400;
@@ -8,6 +10,8 @@ class Spaceship extends Floater{
   }
   public void operations(){
     super.operations();
+    
+    circulardistance = 40;
     
     if(x > width)
       x = 0;
@@ -26,5 +30,8 @@ class Spaceship extends Floater{
     else{
       direction = (float)(Math.atan((mouseY - y)/(mouseX - x)) - PI/2);
     }
+  }
+  public float getcirculardistance(){
+    return circulardistance;
   }
 }
