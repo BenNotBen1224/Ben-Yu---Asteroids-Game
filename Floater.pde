@@ -8,17 +8,12 @@ class Floater{
   protected int [] Y_vertice;
   protected color Color;
   
-  public Floater(){
-    
-  }
-  
   public void operations(/*double Acceleration, double ddirection*/){
     /*
     dx = dx + Acceleration*Math.cos(direction);
     dy = dy + Acceleration*Math.sin(direction);
     direction = direction + ddirection;
     */
-    
     x = x + dx;
     y = y + dy;
   }
@@ -61,9 +56,6 @@ class Floater{
   public void setdx2(float i){
     dx = dx + i;
   }
-  public float getdy(){
-    return x;
-  }
   public void setdy1(float i){
     dy = i;
   }
@@ -76,16 +68,4 @@ class Floater{
   public void setdirection(float i){
     direction = i;
   }
-  public int getvertice(){
-    return vertice;
-  }
-  public void setvertice(int i){
-    vertice = vertice + i;
-  }
-  public color getColor(){
-    return Color;
-  }
-  public void setColor(float x, float y, float z){
-    Color = color(x, y, z);
-  }
-} 
+}
